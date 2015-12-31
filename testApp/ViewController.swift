@@ -13,6 +13,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var heroImageView: UIImageView!
     @IBOutlet var heroTextView: UITextView!
     @IBOutlet var inputTextField: UITextField!
+    var newHeroClass: heroData?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,9 +41,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         let heroName = textField.text
         print(heroName)
-        let newHeroClass = heroData(heroName: heroName)
-        heroTextView.text = newHeroClass.heroBio
-        print(newHeroClass.heroBio)
+        newHeroClass = heroData(heroName: heroName)
+        heroTextView.text = newHeroClass!.heroBio
+        print(newHeroClass!.heroBio)
         
         textField.resignFirstResponder()
         return true
@@ -51,7 +52,20 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func Button(sender: UISegmentedControl) {
         
+        let indexOfButton = sender.selectedSegmentIndex
         
+        switch(indexOfButton){
+        case 0:
+            heroTextView.text = newHeroClass!.heroStats
+            break
+        case 1:
+            heroTextView.text = (newHeroClass!.heroAbilities).joinWithSeparator("\n")
+            break
+        case 2:
+            heroTextView.text = newHeroClass!.heroBio
+            break
+        default: break
+        }
         
     }
 
