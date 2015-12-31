@@ -14,7 +14,8 @@ class heroData{
     var heroImageName = "Default";
     var heroBio = "Select one of the options above"
     var heroStats = "Primary Attribute Displayed here"
-    var heroAbilities: [String] = []
+    var heroAbilityNames: [String] = []
+    var heroAbilityDescription: [String] = []
     
     init(heroName: String?){
         
@@ -25,9 +26,9 @@ class heroData{
         if let bio = bioData[heroName!]{
             
             self.heroBio = bio
-            (self.heroAbilities).append("All the abilities would be listed here")
             self.heroImageName = imageData[heroName!]!
-            self.heroAbilities = abilityNameData[heroName!]!
+            self.heroAbilityNames = abilityNameData[heroName!]!
+            self.heroAbilityDescription = abilityDescriptionData[heroName!]!
             
             return
             

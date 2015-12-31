@@ -42,8 +42,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         let heroName = textField.text
         print(heroName)
         newHeroClass = heroData(heroName: heroName)
-        heroTextView.text = newHeroClass!.heroBio
-        print(newHeroClass!.heroBio)
+        heroTextView.text = newHeroClass!.heroStats
         
         textField.resignFirstResponder()
         return true
@@ -59,7 +58,15 @@ class ViewController: UIViewController, UITextFieldDelegate {
             heroTextView.text = newHeroClass!.heroStats
             break
         case 1:
-            heroTextView.text = (newHeroClass!.heroAbilities).joinWithSeparator("\n")
+            let count = (newHeroClass!.heroAbilityNames).count
+            var abilityString = ""
+            for i in 0..<count{
+                abilityString.appendContentsOf((newHeroClass!.heroAbilityNames)[i])
+                abilityString.appendContentsOf(":\n")
+                abilityString.appendContentsOf((newHeroClass!.heroAbilityDescription)[i])
+                abilityString.appendContentsOf("\n\n")
+            }
+            heroTextView.text = abilityString
             break
         case 2:
             heroTextView.text = newHeroClass!.heroBio
