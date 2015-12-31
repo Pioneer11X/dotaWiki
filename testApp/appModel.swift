@@ -27,6 +27,8 @@ class heroData{
             self.heroBio = bio
             (self.heroAbilities).append("All the abilities would be listed here")
             self.heroImageName = imageData[heroName!]!
+            self.heroAbilities = abilityNameData[heroName!]!
+            
             return
             
         }
