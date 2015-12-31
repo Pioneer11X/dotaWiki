@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -17,21 +18,52 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter a Hero Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zyr-Vz-wkd">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter a Hero Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zyr-Vz-wkd">
                                 <rect key="frame" x="20" y="28" width="560" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Default" translatesAutoresizingMaskIntoConstraints="NO" id="iTQ-EB-ykB">
-                                <rect key="frame" x="180" y="66" width="256" height="144"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Default" translatesAutoresizingMaskIntoConstraints="NO" id="iTQ-EB-ykB">
+                                <rect key="frame" x="174" y="66" width="251" height="141"/>
                             </imageView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Zqs-2Z-JwC">
-                                <rect key="frame" x="20" y="218" width="560" height="362"/>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="KJy-o5-UNH">
+                                <rect key="frame" x="206" y="215" width="188" height="29"/>
+                                <segments>
+                                    <segment title="Stats"/>
+                                    <segment title="Abilities"/>
+                                    <segment title="Bio"/>
+                                </segments>
+                                <connections>
+                                    <action selector="Button:" destination="BYZ-38-t0r" eventType="valueChanged" id="0BT-7Z-3Mi"/>
+                                </connections>
+                            </segmentedControl>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Select One of the Above Options" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="vy6-ih-KDg">
+                                <rect key="frame" x="20" y="251" width="560" height="329"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </tableView>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="vy6-ih-KDg" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="1Jp-IP-BSC"/>
+                            <constraint firstItem="KJy-o5-UNH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Eih-Pe-aMC"/>
+                            <constraint firstItem="iTQ-EB-ykB" firstAttribute="top" secondItem="zyr-Vz-wkd" secondAttribute="bottom" constant="8" id="IbF-YO-N3f"/>
+                            <constraint firstItem="KJy-o5-UNH" firstAttribute="top" secondItem="iTQ-EB-ykB" secondAttribute="bottom" constant="8" id="Ish-T6-ega"/>
+                            <constraint firstItem="vy6-ih-KDg" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="OgP-uI-IkW"/>
+                            <constraint firstItem="zyr-Vz-wkd" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="Yfa-bc-ayr"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="vy6-ih-KDg" secondAttribute="bottom" constant="20" id="eqf-wY-Bu5"/>
+                            <constraint firstItem="iTQ-EB-ykB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="juZ-de-hln"/>
+                            <constraint firstItem="vy6-ih-KDg" firstAttribute="top" secondItem="KJy-o5-UNH" secondAttribute="bottom" constant="8" id="l8K-aX-WxU"/>
+                            <constraint firstItem="zyr-Vz-wkd" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="mFW-gM-ZQB"/>
+                            <constraint firstItem="zyr-Vz-wkd" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="tNI-R0-emg"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="heroImageView" destination="iTQ-EB-ykB" id="4j8-QD-gPZ"/>
+                        <outlet property="heroTextView" destination="vy6-ih-KDg" id="5gX-kC-vGu"/>
+                        <outlet property="inputTextField" destination="zyr-Vz-wkd" id="XF9-i0-Tc4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
