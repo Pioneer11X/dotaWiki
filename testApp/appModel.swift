@@ -29,6 +29,7 @@ class heroData{
             self.heroImageName = imageData[heroName!]!
             self.heroAbilityNames = abilityNameData[heroName!]!
             self.heroAbilityDescription = abilityDescriptionData[heroName!]!
+            self.heroStats = statString[heroName!]!
             
             return
             
