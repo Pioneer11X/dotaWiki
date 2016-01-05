@@ -43,6 +43,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
         print(heroName)
         newHeroClass = heroData(heroName: heroName)
         heroTextView.text = newHeroClass!.heroStats
+        heroImageView.image = UIImage(named: (newHeroClass?.heroImageName)!)    
+        
         
         textField.resignFirstResponder()
         return true
