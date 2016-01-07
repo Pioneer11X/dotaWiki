@@ -63,6 +63,7 @@
                         <outlet property="heroImageView" destination="iTQ-EB-ykB" id="4j8-QD-gPZ"/>
                         <outlet property="heroTextView" destination="vy6-ih-KDg" id="5gX-kC-vGu"/>
                         <outlet property="inputTextField" destination="zyr-Vz-wkd" id="XF9-i0-Tc4"/>
+                        <outlet property="segmentedControl" destination="KJy-o5-UNH" id="bPG-Is-vvV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

@@ -13,6 +13,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var heroImageView: UIImageView!
     @IBOutlet var heroTextView: UITextView!
     @IBOutlet var inputTextField: UITextField!
+    @IBOutlet var segmentedControl: UISegmentedControl!
     var newHeroClass: heroData?
     
     override func viewDidLoad() {
@@ -42,6 +43,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         let heroName = textField.text
         print(heroName)
         newHeroClass = heroData(heroName: heroName)
+        segmentedControl.selectedSegmentIndex = 0
         heroTextView.text = newHeroClass!.heroStats
         heroImageView.image = UIImage(named: (newHeroClass?.heroImageName)!)    
         
