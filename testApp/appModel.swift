@@ -14,8 +14,8 @@ class heroData{
     var heroImageName = "Default";
     var heroBio = "Select one of the options above"
     var heroStats = "Primary Attribute Displayed here"
-    var heroAbilityNames: [String] = []
-    var heroAbilityDescription: [String] = []
+    var heroAbilityNames: [String] = ["Enter a heroes Name for their abilities to be displayed here."]
+    var heroAbilityDescription: [String] = [" "]
     
     init(heroName: String?){
         

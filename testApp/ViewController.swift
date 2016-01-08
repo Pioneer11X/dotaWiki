@@ -18,6 +18,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        newHeroClass = heroData(heroName: nil)
         inputTextField.delegate = self
         print("Loaded")
         // Do any additional setup after loading the view, typically from a nib.
